@@ -20,18 +20,31 @@ export default function Projects() {
                 </span>
               ))}
             </div>
-            {p.link ? (
-              <a
-                className="project-link"
-                href={p.link}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                view source →
-              </a>
-            ) : (
-              <p className="project-link-note">{p.linkLabel}</p>
-            )}
+            <div className="project-links">
+              {p.liveLink && (
+                <a
+                  className="project-link"
+                  href={p.liveLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  live demo →
+                </a>
+              )}
+              {p.link && (
+                <a
+                  className="project-link"
+                  href={p.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  view source →
+                </a>
+              )}
+              {!p.link && !p.liveLink && p.linkLabel && (
+                <p className="project-link-note">{p.linkLabel}</p>
+              )}
+            </div>
           </div>
         ))}
       </div>

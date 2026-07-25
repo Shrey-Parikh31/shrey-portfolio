@@ -125,6 +125,16 @@ export const research = {
 
 export const projects = [
   {
+    name: "splitwise-lite",
+    year: "2026",
+    tech: ["React", "JavaScript"],
+    description:
+      "Client-side debt-simplification app — log shared expenses and get the minimum number of payments needed to settle up, via a from-scratch greedy min-cash-flow algorithm.",
+    liveLink: "https://splitwise-lite-vert.vercel.app",
+    link: "https://github.com/Shrey-Parikh31/splitwise-lite",
+    linkLabel: null,
+  },
+  {
     name: "AI Academic Assistant",
     year: "2024",
     tech: ["React", "JavaScript", "Gemini Flash", "Claude Sonnet"],

@@ -58,12 +58,16 @@
   font-style: italic;
 }
 
-.project-link {
+.project-links {
+  display: flex;
+  gap: 16px;
   margin-top: 16px;
+}
+
+.project-link {
   font-size: 0.85rem;
   color: var(--main);
   font-weight: 600;
-  align-self: flex-start;
   transition: opacity var(--transition);
 }
 
