@@ -1,0 +1,49 @@
+.edu-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.edu-card {
+  background: var(--bg-elevated);
+  border: 1px solid color-mix(in srgb, var(--sub) 20%, transparent);
+  border-radius: 10px;
+  padding: 22px 26px;
+}
+
+.edu-head {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.edu-head h3 {
+  color: var(--text);
+  font-size: 1.05rem;
+}
+
+.edu-dates {
+  color: var(--sub);
+  font-size: 0.8rem;
+}
+
+.edu-degree {
+  color: var(--main);
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
+.edu-meta {
+  color: var(--sub);
+  font-size: 0.85rem;
+  margin-top: 6px;
+}
+
+.edu-detail {
+  color: var(--sub);
+  font-size: 0.85rem;
+  margin-top: 10px;
+  line-height: 1.6;
+}

@@ -1,0 +1,65 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.project-card {
+  background: var(--bg-elevated);
+  border: 1px solid color-mix(in srgb, var(--sub) 20%, transparent);
+  border-radius: 12px;
+  padding: 26px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.project-card:hover {
+  border-color: var(--main);
+  transform: translateY(-4px);
+}
+
+.project-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.project-head h3 {
+  font-size: 1.05rem;
+  color: var(--text);
+}
+
+.project-year {
+  color: var(--sub);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.project-desc {
+  color: var(--sub);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  margin-bottom: 18px;
+  flex: 1;
+}
+
+.chip.small {
+  padding: 5px 10px;
+  font-size: 0.75rem;
+}
+
+.project-link-note {
+  margin-top: 16px;
+  font-size: 0.78rem;
+  color: var(--sub);
+  font-style: italic;
+}
+
+@media (max-width: 720px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

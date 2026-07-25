@@ -1,0 +1,29 @@
+import { projects } from "../data/content";
+import "./Projects.css";
+
+export default function Projects() {
+  return (
+    <section id="projects" className="section projects">
+      <p className="section-label">projects</p>
+      <div className="projects-grid">
+        {projects.map((p) => (
+          <div className="project-card" key={p.name}>
+            <div className="project-head">
+              <h3>{p.name}</h3>
+              <span className="project-year">{p.year}</span>
+            </div>
+            <p className="project-desc">{p.description}</p>
+            <div className="chip-row">
+              {p.tech.map((t) => (
+                <span className="chip small" key={t}>
+                  {t}
+                </span>
+              ))}
+            </div>
+            <p className="project-link-note">{p.linkLabel}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+}

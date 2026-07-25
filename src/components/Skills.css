@@ -1,0 +1,38 @@
+.skills-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.skill-group h3 {
+  font-size: 0.9rem;
+  color: var(--sub);
+  text-transform: lowercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 14px;
+  border-radius: 6px;
+  background: var(--bg-elevated);
+  border: 1px solid color-mix(in srgb, var(--sub) 25%, transparent);
+  color: var(--text);
+  font-size: 0.85rem;
+  transition: border-color var(--transition), color var(--transition), transform var(--transition);
+}
+
+.chip:hover {
+  border-color: var(--main);
+  color: var(--main);
+  transform: translateY(-2px);
+}

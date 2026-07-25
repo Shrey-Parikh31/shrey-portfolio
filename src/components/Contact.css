@@ -1,0 +1,25 @@
+.contact {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-heading {
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+.contact-sub {
+  color: var(--sub);
+  max-width: 480px;
+  margin-bottom: 32px;
+}
+
+.contact-actions {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+}

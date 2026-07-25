@@ -1,0 +1,16 @@
+.footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 32px 24px 48px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  color: var(--sub);
+  font-size: 0.8rem;
+  border-top: 1px solid color-mix(in srgb, var(--sub) 20%, transparent);
+}
+
+.footer-theme {
+  color: var(--main);
+}

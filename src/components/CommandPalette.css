@@ -1,0 +1,85 @@
+.cmdk-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1000;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 14vh;
+  backdrop-filter: blur(2px);
+}
+
+.cmdk-box {
+  width: min(560px, 90vw);
+  background: var(--bg-elevated);
+  border: 1px solid color-mix(in srgb, var(--main) 40%, transparent);
+  border-radius: 10px;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  animation: cmdk-in 120ms ease;
+}
+
+@keyframes cmdk-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.cmdk-input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-bottom: 1px solid color-mix(in srgb, var(--sub) 30%, transparent);
+}
+
+.cmdk-caret {
+  color: var(--main);
+  font-weight: 700;
+}
+
+.cmdk-input-row input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+}
+
+.cmdk-input-row input::placeholder {
+  color: var(--sub);
+}
+
+.cmdk-list {
+  list-style: none;
+  margin: 0;
+  padding: 6px;
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.cmdk-list li {
+  padding: 10px 12px;
+  border-radius: 6px;
+  color: var(--sub);
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.cmdk-list li.active {
+  background: color-mix(in srgb, var(--main) 15%, transparent);
+  color: var(--text);
+}
+
+.cmdk-empty {
+  padding: 16px !important;
+  text-align: center;
+}

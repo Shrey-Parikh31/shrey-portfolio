@@ -1,0 +1,65 @@
+.research-card {
+  background: var(--bg-elevated);
+  border: 1px solid color-mix(in srgb, var(--main) 30%, transparent);
+  border-radius: 12px;
+  padding: 32px;
+}
+
+.research-head {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+.research-head h3 {
+  font-size: 1.2rem;
+  color: var(--text);
+  max-width: 620px;
+}
+
+.research-dates {
+  color: var(--sub);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.research-role {
+  color: var(--main);
+  font-size: 0.9rem;
+  margin: 10px 0 18px;
+}
+
+.research-abstract {
+  color: var(--text);
+  font-size: 0.95rem;
+  line-height: 1.75;
+  margin-bottom: 16px;
+}
+
+.research-bullets {
+  padding-left: 18px;
+  color: var(--sub);
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+}
+
+.research-bullets li {
+  margin-bottom: 6px;
+}
+
+.research-honors {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.honor-chip {
+  background: color-mix(in srgb, var(--main) 12%, transparent);
+  color: var(--main);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+}
