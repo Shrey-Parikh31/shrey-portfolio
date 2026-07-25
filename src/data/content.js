@@ -11,7 +11,7 @@ export const profile = {
   location: "Middletown, PA",
   email: "shrey3106@gmail.com",
   phone: "+1 (717) 317-7128",
-  linkedin: "https://linkedin.com/in/shreyparikh31",
+  linkedin: "https://www.linkedin.com/in/shrey-parikh31/",
   github: null,
 };
 
