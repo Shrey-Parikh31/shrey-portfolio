@@ -49,6 +49,18 @@ export const skills = [
 
 export const experience = [
   {
+    role: "Multimedia Specialist",
+    org: "Center for Teaching Excellence, Penn State Harrisburg",
+    location: "Middletown, PA",
+    dates: "2026 – Present",
+    bullets: [
+      "Create audio descriptions and closed captions for recorded lecture videos, improving accessibility for visually impaired students university-wide.",
+      "Edit and process video content in Adobe Premiere Pro alongside the department's multimedia specialist to prepare polished, accessible final cuts.",
+      "Record original narration audio for description tracks, balancing clarity and pacing to meet accessibility standards.",
+      "Bring creative problem-solving to new captioning tools and workflows, keeping output professional and accessible to all users.",
+    ],
+  },
+  {
     role: "Software Development Intern",
     org: "Silver Touch Technologies Limited",
     location: "Ahmedabad, India",
@@ -60,7 +72,7 @@ export const experience = [
     ],
   },
   {
-    role: "Software Developer",
+    role: "Software Developer Intern",
     org: "BexCode IT / Outsourcing Services",
     location: "Ahmedabad, India",
     dates: "Jun 2024 – Aug 2024",
@@ -71,12 +83,25 @@ export const experience = [
     ],
   },
   {
-    role: "Marketing & Technical Team Member",
-    org: "CoBuy",
+    role: "Technical Member Head",
+    org: "ISTE Students' Chapter IT-NU",
     location: "Ahmedabad, India",
-    dates: "Jun 2024 – Present",
+    dates: "Aug 2023 – Present",
     bullets: [
-      "Supports both marketing initiatives and technical execution for the team.",
+      "Collaborated on student-centric technical workshops, promoting knowledge sharing and professional development among peers.",
+      "Led event planning and coordination for chapter activities, contributing to increased participation and awareness.",
+      "Introduced problem-solving methodologies that fostered a stronger culture of peer learning.",
+    ],
+  },
+  {
+    role: "Technical Team Member",
+    org: "Computer Society of India, Nirma University",
+    location: "Ahmedabad, India",
+    dates: "May 2023 – Present",
+    bullets: [
+      "Contributed to technical projects involving Logisim and Simulink, ensuring accurate and efficient implementation of designs.",
+      "Facilitated peer learning sessions on emerging technologies, raising technical proficiency across the team.",
+      "Supported the organization of seminars and hackathons, boosting engagement and community-building efforts.",
     ],
   },
 ];
@@ -116,6 +141,24 @@ export const projects = [
       "Applied linear regression, probability, and statistical inference to Kaggle/Scopus datasets. Implemented bisection, Newton's method, and fixed-point iteration with convergence and error-bound analysis.",
     link: null,
     linkLabel: "Source not yet published",
+  },
+  {
+    name: "Snake Game in Java",
+    year: "2023",
+    tech: ["Java", "Swing", "Linked List"],
+    description:
+      "Classic Snake game implemented with a linked-list-based data structure, featuring real-time movement, collision detection, and a Java Swing GUI.",
+    link: "https://github.com/Shrey-Parikh31/Snake-Game-in-Java",
+    linkLabel: null,
+  },
+  {
+    name: "Wordle in C",
+    year: "2023",
+    tech: ["C", "C Graphics"],
+    description:
+      "Graphical clone of Wordle built with C graphics libraries, with interactive UI and logic for dynamic word checking and display.",
+    link: "https://github.com/Shrey-Parikh31/Wordle-in-C",
+    linkLabel: null,
   },
 ];
 

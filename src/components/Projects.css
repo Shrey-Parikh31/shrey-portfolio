@@ -58,6 +58,19 @@
   font-style: italic;
 }
 
+.project-link {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: var(--main);
+  font-weight: 600;
+  align-self: flex-start;
+  transition: opacity var(--transition);
+}
+
+.project-link:hover {
+  opacity: 0.75;
+}
+
 @media (max-width: 720px) {
   .projects-grid {
     grid-template-columns: 1fr;

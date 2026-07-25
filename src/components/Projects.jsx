@@ -20,7 +20,18 @@ export default function Projects() {
                 </span>
               ))}
             </div>
-            <p className="project-link-note">{p.linkLabel}</p>
+            {p.link ? (
+              <a
+                className="project-link"
+                href={p.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                view source →
+              </a>
+            ) : (
+              <p className="project-link-note">{p.linkLabel}</p>
+            )}
           </div>
         ))}
       </div>
