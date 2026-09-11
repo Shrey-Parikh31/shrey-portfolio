@@ -34,6 +34,11 @@ export default function CommandPalette({ open, onClose }) {
         run: () => window.open(profile.linkedin, "_blank", "noopener"),
       },
       {
+        id: "open-github",
+        label: "open GitHub profile",
+        run: () => window.open(profile.github, "_blank", "noopener"),
+      },
+      {
         id: "top",
         label: "back to top",
         run: () => document.getElementById("hero")?.scrollIntoView({ behavior: "smooth" }),

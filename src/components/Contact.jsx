@@ -30,6 +30,14 @@ export default function Contact() {
         >
           linkedin
         </a>
+        <a
+          className="btn btn-ghost"
+          href={profile.github}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          github
+        </a>
       </div>
     </section>
   );
