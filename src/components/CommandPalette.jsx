@@ -10,7 +10,7 @@ export default function CommandPalette({ open, onClose }) {
   const inputRef = useRef(null);
 
   const commands = useMemo(() => {
-    const nav = ["about", "skills", "experience", "research", "projects", "education", "contact"].map(
+    const nav = ["about", "skills", "experience", "research", "projects", "case-study", "education", "contact"].map(
       (id) => ({
         id: `goto-${id}`,
         label: `go to ${id}`,

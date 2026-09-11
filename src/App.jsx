@@ -9,6 +9,7 @@ import Skills from "./components/Skills";
 import Experience from "./components/Experience";
 import Research from "./components/Research";
 import Projects from "./components/Projects";
+import CaseStudy from "./components/CaseStudy";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
@@ -40,6 +41,7 @@ function App() {
         <Experience />
         <Research />
         <Projects />
+        <CaseStudy />
         <Education />
         <Contact />
       </main>

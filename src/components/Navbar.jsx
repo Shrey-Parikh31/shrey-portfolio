@@ -8,6 +8,7 @@ const LINKS = [
   { id: "experience", label: "experience" },
   { id: "research", label: "research" },
   { id: "projects", label: "projects" },
+  { id: "case-study", label: "case study" },
   { id: "contact", label: "contact" },
 ];
 

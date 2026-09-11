@@ -246,3 +246,86 @@ export const education = [
     detail: null,
   },
 ];
+
+// Case study. Every number below comes from the repository commits
+// (cdb00d7, d0f1bbf) and is reproducible by running eval/retrieval.py.
+export const caseStudy = {
+  title: "Designing how an AI says no",
+  subtitle:
+    "Refusal design for a role-aware knowledge assistant, and the evaluation set that proved the first design wrong.",
+  role: "Solo project. Design decisions, implementation, and evaluation.",
+  dates: "2026",
+  tools: ["Python", "Gemini API", "MCP", "Claude Code", "Decision records"],
+  metrics: [
+    { value: "83.3% to 93.8%", label: "right source found" },
+    { value: "7 of 10 to 9 of 10", label: "correct nothing-found replies" },
+    { value: "48", label: "question evaluation set" },
+    { value: "0", label: "restricted leaks" },
+  ],
+  sections: [
+    {
+      heading: "The problem",
+      body: [
+        "A student asks what to do about a hacked university account. Guidance exists, but it is classified staff-only. The assistant has to say something, and every available answer costs something.",
+      ],
+    },
+    {
+      heading: "Two options, both wrong",
+      body: [
+        "Say nothing exists. That leaks nothing and misinforms the person, because the institution does hold guidance on exactly their problem.",
+        "Say material exists but cannot be shown. That helps them, and it confirms a document on the subject is held. Repeated queries would let someone map the subjects the restricted corpus covers.",
+      ],
+    },
+    {
+      heading: "The decision",
+      body: [
+        "Disclose existence. A system that denies the existence of guidance the institution actually has is lying on the institution behalf, and the office holding the material controls access anyway.",
+        "What crosses the boundary is a classification label and nothing else. Not the passage, not the title, not the filename. Enough to send someone to the right office, not enough to answer their question.",
+      ],
+    },
+    {
+      heading: "Where the design failed",
+      body: [
+        "Word-matching retrieval fired on innocent questions that happened to share vocabulary with a restricted document. Who is a full professor here scored 0.28 against the compensation bands, higher than a legitimate staff match at 0.19, so no threshold separated them.",
+        "A student asking a harmless directory question was told confidential material exists. Nothing leaked, and the answer was still wrong. That is a design failure, not a security one.",
+      ],
+    },
+    {
+      heading: "How I measured it",
+      body: [
+        "I built a 48-question evaluation set covering three clearance levels, with every role on both sides of every boundary and seven deliberate paraphrases. It scores retrieval separately from generation, because the fixes are different: a passage that was never fetched cannot be repaired with better prompting.",
+        "Retrieval scoring needs no model, no API key and no network, so it runs in about a second and fails the build on any leak.",
+      ],
+    },
+    {
+      heading: "What changed",
+      body: [
+        "Switching from word matching to meaning-based retrieval took the right source being found from 83.3% to 93.8%, and correct nothing-found replies from 7 of 10 to 9 of 10, which is the false-notice problem getting measurably smaller.",
+        "End-to-end correctness did not move at all: 94.7% before, 94.7% after. The model was already rewriting each question before searching and quietly compensating for weak retrieval, so improving that component returned less than its own score promised. I recorded that rather than burying it.",
+      ],
+    },
+    {
+      heading: "A second, smaller iteration",
+      body: [
+        "In the classroom assistant built alongside this, teacher mode was unlocked by a browser pop-up. Embedded browsers block that pop-up, so teachers could not enter teacher mode at all, and it rendered as a raw localhost says dialog during a demo.",
+        "I replaced it with an inline form: Enter submits because the platform provides it, a visible Unlock button makes it discoverable, and Escape cancels. The access check stayed on the server, where it belongs.",
+      ],
+    },
+    {
+      heading: "What I would do next",
+      body: [
+        "Measure the false-notice rate directly rather than inferring it from the nothing-found category, and replace the shared staff passcode with per-user identity so the clearance decision follows the person rather than the deployment.",
+      ],
+    },
+  ],
+  links: [
+    {
+      label: "Read the code and decision records",
+      href: "https://github.com/Shrey-Parikh31/rbac-rag-assistant",
+    },
+    {
+      label: "Try the classroom assistant",
+      href: "https://highschool-rag-chatbot.vercel.app",
+    },
+  ],
+};
