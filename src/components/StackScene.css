@@ -1,0 +1,162 @@
+.stack-scene {
+  height: 340vh;
+  position: relative;
+  background: var(--bg);
+}
+
+.stack-sticky {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.stack-canvas {
+  position: absolute;
+  inset: 0;
+}
+
+.stack-copy {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 30rem;
+  pointer-events: none;
+  will-change: opacity;
+}
+
+.stack-copy a {
+  pointer-events: auto;
+}
+
+.stack-copy-left {
+  left: clamp(24px, 7vw, 110px);
+}
+
+.stack-copy-right {
+  right: clamp(24px, 7vw, 110px);
+  text-align: right;
+  opacity: 0;
+}
+
+.floor-tag {
+  color: var(--main);
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.floor-name {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.04;
+  letter-spacing: -0.01em;
+}
+
+.floor-heading {
+  font-size: clamp(1.7rem, 3.6vw, 2.6rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.15;
+}
+
+.floor-role {
+  margin-top: 16px;
+  font-size: clamp(1rem, 2.4vw, 1.4rem);
+  color: var(--main);
+  font-weight: 600;
+  min-height: 1.8em;
+}
+
+.floor-body {
+  margin-top: 20px;
+  color: var(--sub);
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.floor-cue {
+  margin-top: 40px;
+  color: var(--sub);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+}
+
+.floor-links {
+  margin-top: 24px;
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+
+.floor-links a {
+  color: var(--main);
+  font-size: 0.88rem;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: border-color 150ms ease;
+}
+
+.floor-links a:hover {
+  border-bottom-color: var(--main);
+}
+
+/* On narrow screens the figure and the copy cannot sit side by side,
+   so the copy takes the lower half and the 3D reads as a backdrop. */
+@media (max-width: 760px) {
+  .stack-copy {
+    top: auto;
+    bottom: 8vh;
+    transform: none;
+    left: 24px;
+    right: 24px;
+    max-width: none;
+    text-align: left;
+  }
+
+  .stack-copy-right {
+    text-align: left;
+  }
+
+  .floor-links {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stack-scene {
+    height: auto;
+  }
+
+  .stack-sticky {
+    position: static;
+    height: auto;
+    padding: 80px 0;
+  }
+
+  .stack-canvas {
+    position: relative;
+    height: 50vh;
+  }
+
+  .stack-copy {
+    position: static;
+    transform: none;
+    opacity: 1 !important;
+    max-width: 44rem;
+    margin: 40px auto;
+    padding: 0 24px;
+    text-align: left;
+  }
+
+  .stack-copy-right {
+    text-align: left;
+  }
+
+  .floor-links {
+    justify-content: flex-start;
+  }
+}

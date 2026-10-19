@@ -1,39 +1,10 @@
-import { useRef, useMemo, useEffect } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
-import { useTheme } from "../context/ThemeContext";
-import "./StackFigure.css";
+import { useRef } from "react";
+import { useFrame } from "@react-three/fiber";
 
 const DAMP = 0.07;
 
-function useReducedMotion() {
-  return useMemo(
-    () =>
-      typeof window !== "undefined" &&
-      window.matchMedia?.("(prefers-reduced-motion: reduce)").matches,
-    []
-  );
-}
-
-/**
- * Pointer position normalised to -1..1 across the whole window.
- * r3f's own `state.pointer` only updates while the cursor is over the canvas,
- * which makes the figure freeze as soon as you move onto the text below it.
- */
-function useWindowPointer() {
-  const pointer = useRef({ x: 0, y: 0 });
-  useEffect(() => {
-    const onMove = (e) => {
-      pointer.current.x = (e.clientX / window.innerWidth) * 2 - 1;
-      pointer.current.y = -((e.clientY / window.innerHeight) * 2 - 1);
-    };
-    window.addEventListener("pointermove", onMove, { passive: true });
-    return () => window.removeEventListener("pointermove", onMove);
-  }, []);
-  return pointer;
-}
-
 /** A terminal-headed figure that turns to follow the pointer. */
-function Figure({ colors, pointer, reduced }) {
+export function TerminalFigure({ colors, pointer, reduced }) {
   const head = useRef();
   const body = useRef();
   const leftCaret = useRef();
@@ -120,26 +91,5 @@ function Figure({ colors, pointer, reduced }) {
         ))}
       </group>
     </group>
-  );
-}
-
-export default function StackFigure() {
-  const { themeId, themes } = useTheme();
-  const pointer = useWindowPointer();
-  const reduced = useReducedMotion();
-  const colors = useMemo(
-    () => (themes.find((t) => t.id === themeId) ?? themes[0]).colors,
-    [themeId, themes]
-  );
-
-  return (
-    <div className="stack-figure" aria-hidden="true">
-      <Canvas camera={{ position: [0, 0, 6.2], fov: 42 }} dpr={[1, 2]}>
-        <ambientLight intensity={0.75} />
-        <directionalLight position={[3, 4, 5]} intensity={1.1} />
-        <directionalLight position={[-4, -1, 2]} intensity={0.35} />
-        <Figure colors={colors} pointer={pointer} reduced={reduced} />
-      </Canvas>
-    </div>
   );
 }
