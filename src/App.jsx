@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "./components/Navbar";
 import CommandPalette from "./components/CommandPalette";
+import StackFigure from "./components/StackFigure";
 import Hero from "./components/Hero";
 import StatsBar from "./components/StatsBar";
 import About from "./components/About";
@@ -34,6 +35,8 @@ function App() {
       <Navbar onOpenPalette={() => setPaletteOpen(true)} />
       <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />
       <main>
+        {/* prototype: evaluating the cursor-follow figure in isolation */}
+        <StackFigure />
         <Hero />
         <StatsBar />
         <About />
