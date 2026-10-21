@@ -1,5 +1,7 @@
 .stack-scene {
-  height: 340vh;
+  /* Runway per floor transition. Longer than this and the fall reads as
+     dead scrolling rather than depth. */
+  height: 200vh;
   position: relative;
   background: var(--bg);
 }
@@ -22,7 +24,19 @@
   transform: translateY(-50%);
   max-width: 30rem;
   pointer-events: none;
-  will-change: opacity;
+}
+
+/* The animated layer. Kept separate from .stack-copy so the scroll handler can
+   own transform without fighting the layout transform that centres the block. */
+.stack-copy-inner {
+  will-change: opacity, filter, transform;
+}
+
+/* Starting state for copy that arrives later, so it is not briefly sharp
+   and visible before the first scroll event runs. */
+.stack-copy-hidden {
+  opacity: 0;
+  filter: blur(14px);
 }
 
 .stack-copy a {
@@ -36,7 +50,6 @@
 .stack-copy-right {
   right: clamp(24px, 7vw, 110px);
   text-align: right;
-  opacity: 0;
 }
 
 .floor-tag {
@@ -145,11 +158,18 @@
   .stack-copy {
     position: static;
     transform: none;
-    opacity: 1 !important;
     max-width: 44rem;
     margin: 40px auto;
     padding: 0 24px;
     text-align: left;
+  }
+
+  /* Motion off: everything is simply present and sharp, no blur, no drift. */
+  .stack-copy-inner,
+  .stack-copy-hidden {
+    opacity: 1 !important;
+    filter: none !important;
+    transform: none !important;
   }
 
   .stack-copy-right {

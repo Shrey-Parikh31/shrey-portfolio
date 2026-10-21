@@ -3,8 +3,9 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { TerminalFigure } from "./StackFigure";
 import GateFloor from "./GateFloor";
 
-// World-space drop from floor 08 down to floor 00.
-const FALL = 17;
+// World-space drop from floor 08 down to floor 00. Kept short on purpose:
+// a long drop reads as dead air rather than depth.
+const FALL = 10;
 const CAMERA_Z = 6.2;
 const FOV = 42;
 

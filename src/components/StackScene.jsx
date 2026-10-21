@@ -41,11 +41,18 @@ export default function StackScene() {
 
       // Written straight to the DOM: this runs on every scroll frame, so it
       // must not go through React state.
+      // Leaving copy blurs and drifts up; arriving copy sharpens from below.
       if (topCopy.current) {
-        topCopy.current.style.opacity = String(1 - ramp(clamped, 0.06, 0.26));
+        const out = ramp(clamped, 0.04, 0.3);
+        topCopy.current.style.opacity = String(1 - out);
+        topCopy.current.style.filter = `blur(${(out * 14).toFixed(2)}px)`;
+        topCopy.current.style.transform = `translateY(${(out * -56).toFixed(1)}px)`;
       }
       if (bottomCopy.current) {
-        bottomCopy.current.style.opacity = String(ramp(clamped, 0.66, 0.88));
+        const show = ramp(clamped, 0.46, 0.82);
+        bottomCopy.current.style.opacity = String(show);
+        bottomCopy.current.style.filter = `blur(${((1 - show) * 14).toFixed(2)}px)`;
+        bottomCopy.current.style.transform = `translateY(${((1 - show) * 56).toFixed(1)}px)`;
       }
     };
     onScroll();
@@ -69,18 +76,23 @@ export default function StackScene() {
           />
         </Suspense>
 
-        <div className="stack-copy stack-copy-left" ref={topCopy}>
-          <p className="floor-tag">08 / tools</p>
-          <h1 className="floor-name">{profile.name}</h1>
-          <p className="floor-role">
-            {role}
-            <span className="caret" aria-hidden="true">|</span>
-          </p>
-          <p className="floor-body">{profile.tagline}</p>
-          <p className="floor-cue">↓ scroll to descend</p>
+        <div className="stack-copy stack-copy-left">
+          {/* Inner wrapper carries the animation so the outer element keeps
+              owning layout, which differs between desktop and mobile. */}
+          <div className="stack-copy-inner" ref={topCopy}>
+            <p className="floor-tag">08 / tools</p>
+            <h1 className="floor-name">{profile.name}</h1>
+            <p className="floor-role">
+              {role}
+              <span className="caret" aria-hidden="true">|</span>
+            </p>
+            <p className="floor-body">{profile.tagline}</p>
+            <p className="floor-cue">↓ scroll to descend</p>
+          </div>
         </div>
 
-        <div className="stack-copy stack-copy-right" ref={bottomCopy}>
+        <div className="stack-copy stack-copy-right">
+          <div className="stack-copy-inner stack-copy-hidden" ref={bottomCopy}>
           <p className="floor-tag">00 / gates</p>
           <h2 className="floor-heading">Before the frameworks, there were gates.</h2>
           <p className="floor-body">
@@ -104,7 +116,8 @@ export default function StackScene() {
             >
               2 player dice
             </a>
-          </p>
+            </p>
+          </div>
         </div>
       </div>
     </section>
