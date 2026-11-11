@@ -1,49 +1,8 @@
-.edu-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.edu-card {
-  background: var(--bg-elevated);
-  border: 1px solid color-mix(in srgb, var(--sub) 20%, transparent);
-  border-radius: 10px;
-  padding: 22px 26px;
-}
-
-.edu-head {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 10px;
-  align-items: baseline;
-}
-
-.edu-head h3 {
-  color: var(--text);
-  font-size: 1.05rem;
-}
-
-.edu-dates {
-  color: var(--sub);
-  font-size: 0.8rem;
-}
-
-.edu-degree {
-  color: var(--main);
-  font-size: 0.9rem;
-  margin-top: 6px;
-}
-
-.edu-meta {
-  color: var(--sub);
-  font-size: 0.85rem;
-  margin-top: 6px;
-}
-
-.edu-detail {
-  color: var(--sub);
-  font-size: 0.85rem;
-  margin-top: 10px;
-  line-height: 1.6;
-}
+.edu-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 40px; }
+.edu-card { padding-top: 20px; border-top: 1px solid color-mix(in srgb, var(--sub) 23%, transparent); }
+.edu-head h3 { font-size: 0.98rem; font-weight: 500; line-height: 1.6; }
+.edu-dates { display: block; color: var(--sub); font-size: 0.7rem; margin-top: 7px; }
+.edu-degree { color: var(--main); font-size: 0.8rem; margin-top: 14px; }
+.edu-meta { color: var(--sub); font-size: 0.73rem; margin-top: 6px; }
+.edu-detail { color: var(--sub); font-size: 0.73rem; margin-top: 14px; line-height: 1.8; }
+@media (max-width: 650px) { .edu-grid { grid-template-columns: 1fr; gap: 28px; } }

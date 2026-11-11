@@ -1,69 +1,30 @@
 import { caseStudy } from "../data/content";
+import Arrow from "./Arrow";
 import "./CaseStudy.css";
 
 export default function CaseStudy() {
   return (
-    <section id="case-study" className="section case-study">
-      <p className="section-label">case study</p>
-
-      <div className="cs-card">
-        <div className="cs-head">
-          <div>
-            <h3>{caseStudy.title}</h3>
-            <p className="cs-subtitle">{caseStudy.subtitle}</p>
-          </div>
-          <span className="cs-dates">{caseStudy.dates}</span>
-        </div>
-
-        <p className="cs-role">{caseStudy.role}</p>
-
-        <div className="chip-row cs-tools">
-          {caseStudy.tools.map((t) => (
-            <span className="chip small" key={t}>
-              {t}
-            </span>
-          ))}
-        </div>
-
-        <div className="cs-metrics">
-          {caseStudy.metrics.map((m) => (
-            <div className="cs-metric" key={m.label}>
-              <b>{m.value}</b>
-              <span>{m.label}</span>
+    <section id="case-study" className="section case-study" tabIndex={-1} aria-labelledby="case-study-title">
+      <div className="cs-intro">
+        <h2 id="case-study-title">{caseStudy.title}</h2>
+        <p>{caseStudy.subtitle}</p>
+      </div>
+      <details className="cs-details">
+        <summary>Read the case study</summary>
+        <div className="cs-content">
+          <p className="cs-role">{caseStudy.role} / {caseStudy.dates}</p>
+          <p className="cs-context">Historical results from the original 48-question set. The featured project above links to the newer held-out evaluation.</p>
+          <dl className="cs-metrics">{caseStudy.metrics.map((metric) => <div key={metric.label}><dt>{metric.label}</dt><dd>{metric.value}</dd></div>)}</dl>
+          {caseStudy.sections.map((section) => (
+            <div className="cs-section" key={section.heading}>
+              <h3>{section.heading}</h3>
+              {section.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+              {section.bullets && <ul>{section.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>}
             </div>
           ))}
+          <div className="cs-links">{caseStudy.links.map((link) => <a className="text-link" href={link.href} target="_blank" rel="noopener noreferrer" key={link.href}>{link.label} <Arrow diagonal /></a>)}</div>
         </div>
-
-        {caseStudy.sections.map((s) => (
-          <div className="cs-section" key={s.heading}>
-            <h4>{s.heading}</h4>
-            {s.body.map((p, i) => (
-              <p key={i}>{p}</p>
-            ))}
-            {s.bullets && (
-              <ul>
-                {s.bullets.map((b, i) => (
-                  <li key={i}>{b}</li>
-                ))}
-              </ul>
-            )}
-          </div>
-        ))}
-
-        <div className="cs-links">
-          {caseStudy.links.map((l) => (
-            <a
-              className="cs-link"
-              href={l.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              key={l.href}
-            >
-              {l.label} &rarr;
-            </a>
-          ))}
-        </div>
-      </div>
+      </details>
     </section>
   );
 }

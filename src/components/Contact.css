@@ -1,25 +1,9 @@
-.contact {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.contact-heading {
-  font-size: clamp(1.6rem, 4vw, 2.4rem);
-  color: var(--text);
-  margin-bottom: 14px;
-}
-
-.contact-sub {
-  color: var(--sub);
-  max-width: 480px;
-  margin-bottom: 32px;
-}
-
-.contact-actions {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: center;
-}
+.contact { padding-top: 64px; padding-bottom: 40px; }
+.contact h2 { font-size: clamp(1.8rem, 4vw, 2.75rem); line-height: 1.3; letter-spacing: -0.04em; font-weight: 500; }
+.contact-sub { color: var(--sub); margin: 16px 0 24px; max-width: 64ch; font-size: 0.86rem; line-height: 1.8; }
+.contact-email-row { display: flex; align-items: center; flex-wrap: wrap; gap: 12px 24px; }
+.contact-email { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: var(--main); font-size: clamp(1rem, 2.4vw, 1.5rem); }
+.copy-button { color: var(--sub); background: none; border: 1px solid var(--sub); border-radius: 4px; min-height: 44px; padding: 8px 12px; font-size: 0.72rem; }
+.copy-button:hover { color: var(--main); border-color: var(--main); }
+.copy-status { color: var(--sub); min-height: 24px; margin-top: 8px; font-size: 0.72rem; }
+.contact-socials { display: flex; gap: 24px; }

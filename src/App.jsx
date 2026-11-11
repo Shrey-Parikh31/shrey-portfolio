@@ -3,7 +3,6 @@ import { ThemeProvider } from "./context/ThemeContext";
 import Navbar from "./components/Navbar";
 import CommandPalette from "./components/CommandPalette";
 import Hero from "./components/Hero";
-import StatsBar from "./components/StatsBar";
 import About from "./components/About";
 import Skills from "./components/Skills";
 import Experience from "./components/Experience";
@@ -13,6 +12,7 @@ import CaseStudy from "./components/CaseStudy";
 import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
+import TypingBreak from "./components/TypingBreak";
 
 function App() {
   const [paletteOpen, setPaletteOpen] = useState(false);
@@ -31,19 +31,20 @@ function App() {
 
   return (
     <ThemeProvider>
+      <a className="skip-link" href="#main">Skip to content</a>
       <Navbar onOpenPalette={() => setPaletteOpen(true)} />
       <CommandPalette open={paletteOpen} onClose={() => setPaletteOpen(false)} />
-      <main>
+      <main id="main" tabIndex={-1}>
         <Hero />
-        <StatsBar />
-        <About />
-        <Skills />
-        <Experience />
-        <Research />
         <Projects />
         <CaseStudy />
+        <Experience />
+        <Research />
+        <About />
+        <Skills />
         <Education />
         <Contact />
+        <TypingBreak />
       </main>
       <Footer />
     </ThemeProvider>

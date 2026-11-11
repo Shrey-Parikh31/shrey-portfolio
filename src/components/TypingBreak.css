@@ -1,0 +1,14 @@
+.typing-break { padding-top: 0; }
+.typing-break > details { border-top: 1px solid color-mix(in srgb, var(--sub) 25%, transparent); }
+.typing-break summary { padding: 20px 0; font-size: 0.8rem; color: var(--sub); }
+.typing-break summary > span { float: right; font-size: 0.7rem; }
+.typing-round { padding: 12px 0 20px; max-width: 760px; }
+.typing-round > p:first-child, .typing-privacy { color: var(--sub); font-size: 0.72rem; }
+.typing-target { margin: 24px 0; font-size: clamp(1.2rem, 2.8vw, 1.7rem); line-height: 1.9; color: var(--sub); white-space: pre-wrap; }
+.typing-target .correct { color: var(--main); }
+.typing-target .incorrect { color: var(--error); text-decoration: underline wavy; text-underline-offset: 4px; }
+.typing-target .current { border-left: 2px solid var(--main); margin-left: -2px; }
+.typing-round textarea { display: block; resize: vertical; width: 100%; min-height: 90px; padding: 14px; background: var(--bg-elevated); color: var(--text); border: 1px solid var(--sub); border-radius: 6px; font-size: 0.9rem; }
+.typing-controls { display: flex; align-items: center; flex-wrap: wrap; justify-content: space-between; gap: 12px; margin-top: 16px; font-size: 0.8rem; color: var(--main); }
+.typing-privacy { margin-top: 18px; }
+@media (max-width: 500px) { .typing-break summary > span { float: none; display: block; margin: 6px 0 0 18px; } }
