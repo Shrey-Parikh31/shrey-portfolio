@@ -1,142 +1,17 @@
-.cs-card {
-  background: var(--bg-elevated);
-  border: 1px solid color-mix(in srgb, var(--main) 30%, transparent);
-  border-radius: 12px;
-  padding: 32px;
-}
-
-.cs-head {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-.cs-head h3 {
-  font-size: 1.35rem;
-  color: var(--text);
-  max-width: 620px;
-  line-height: 1.3;
-}
-
-.cs-subtitle {
-  color: var(--sub);
-  font-size: 0.9rem;
-  margin-top: 6px;
-  max-width: 620px;
-}
-
-.cs-dates {
-  color: var(--sub);
-  font-size: 0.8rem;
-  white-space: nowrap;
-}
-
-.cs-role {
-  color: var(--main);
-  font-size: 0.85rem;
-  margin: 14px 0 14px;
-}
-
-.cs-tools {
-  margin-bottom: 24px;
-}
-
-/* Measured outcomes, read before the prose. */
-.cs-metrics {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1px;
-  background: color-mix(in srgb, var(--main) 22%, transparent);
-  border: 1px solid color-mix(in srgb, var(--main) 22%, transparent);
-  border-radius: 8px;
-  overflow: hidden;
-  margin-bottom: 28px;
-}
-
-.cs-metric {
-  background: var(--bg);
-  padding: 14px 20px;
-  flex: 1 1 150px;
-}
-
-.cs-metric b {
-  display: block;
-  font-family: var(--font-mono);
-  color: var(--main);
-  font-size: 1.25rem;
-  line-height: 1.2;
-  font-variant-numeric: tabular-nums;
-}
-
-.cs-metric span {
-  display: block;
-  color: var(--sub);
-  font-size: 0.72rem;
-  margin-top: 6px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-}
-
-.cs-section {
-  margin-bottom: 22px;
-}
-
-.cs-section h4 {
-  color: var(--text);
-  font-size: 0.82rem;
-  letter-spacing: 0.11em;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-}
-
-.cs-section p {
-  color: var(--text);
-  font-size: 0.95rem;
-  line-height: 1.75;
-  margin-bottom: 10px;
-  max-width: 68ch;
-}
-
-.cs-section ul {
-  padding-left: 18px;
-  color: var(--sub);
-  font-size: 0.9rem;
-  line-height: 1.7;
-  max-width: 68ch;
-}
-
-.cs-section li {
-  margin-bottom: 6px;
-}
-
-.cs-links {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 18px;
-  margin-top: 26px;
-  padding-top: 20px;
-  border-top: 1px solid color-mix(in srgb, var(--main) 18%, transparent);
-}
-
-.cs-link {
-  color: var(--main);
-  font-size: 0.85rem;
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-.cs-link:hover {
-  opacity: 0.72;
-}
-
-@media (max-width: 600px) {
-  .cs-card {
-    padding: 22px;
-  }
-
-  .cs-head h3 {
-    font-size: 1.15rem;
-  }
-}
+.case-study { padding-top: 16px; padding-bottom: 40px; }
+.cs-intro { padding-top: 8px; }
+.cs-intro h2 { font-size: 1.2rem; font-weight: 500; letter-spacing: -0.02em; }
+.cs-intro > p { max-width: 74ch; margin-top: 10px; color: var(--sub); font-size: 0.82rem; line-height: 1.8; }
+.cs-details > summary { color: var(--main); font-size: 0.78rem; padding: 15px 0; }
+.cs-content { margin-top: 16px; padding: 28px; background: var(--bg-elevated); border-radius: 12px; }
+.cs-role { color: var(--text); font-size: 0.78rem; }
+.cs-context { max-width: 72ch; color: var(--sub); font-size: 0.75rem; margin-top: 12px; }
+.cs-metrics { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; margin: 24px 0 32px; }
+.cs-metrics > div { display: flex; flex-direction: column-reverse; gap: 5px; }
+.cs-metrics dt { color: var(--sub); font-size: 0.72rem; }
+.cs-metrics dd { color: var(--main); margin: 0; font-size: 1.05rem; font-variant-numeric: tabular-nums; }
+.cs-section { margin: 24px 0; max-width: 74ch; }
+.cs-section h3 { margin-bottom: 12px; color: var(--text); font-weight: 500; font-size: 0.93rem; }
+.cs-section p, .cs-section li { font-size: 0.85rem; line-height: 1.9; margin-top: 10px; }
+.cs-links { display: flex; flex-wrap: wrap; gap: 8px 22px; border-top: 1px solid color-mix(in srgb, var(--sub) 25%, transparent); padding-top: 14px; }
+@media (max-width: 480px) { .cs-content { padding: 20px; } .cs-metrics { grid-template-columns: 1fr; } }

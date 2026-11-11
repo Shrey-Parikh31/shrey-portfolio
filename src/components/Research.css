@@ -1,65 +1,11 @@
-.research-card {
-  background: var(--bg-elevated);
-  border: 1px solid color-mix(in srgb, var(--main) 30%, transparent);
-  border-radius: 12px;
-  padding: 32px;
-}
-
-.research-head {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  justify-content: space-between;
-  align-items: baseline;
-}
-
-.research-head h3 {
-  font-size: 1.2rem;
-  color: var(--text);
-  max-width: 620px;
-}
-
-.research-dates {
-  color: var(--sub);
-  font-size: 0.8rem;
-  white-space: nowrap;
-}
-
-.research-role {
-  color: var(--main);
-  font-size: 0.9rem;
-  margin: 10px 0 18px;
-}
-
-.research-abstract {
-  color: var(--text);
-  font-size: 0.95rem;
-  line-height: 1.75;
-  margin-bottom: 16px;
-}
-
-.research-bullets {
-  padding-left: 18px;
-  color: var(--sub);
-  font-size: 0.9rem;
-  line-height: 1.7;
-  margin-bottom: 20px;
-}
-
-.research-bullets li {
-  margin-bottom: 6px;
-}
-
-.research-honors {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-
-.honor-chip {
-  background: color-mix(in srgb, var(--main) 12%, transparent);
-  color: var(--main);
-  border-radius: 6px;
-  padding: 6px 12px;
-  font-size: 0.8rem;
-}
+.research-content { display: grid; grid-template-columns: 1.7fr 1fr; gap: 48px; }
+.research-content h3 { font-size: 1.05rem; font-weight: 500; line-height: 1.6; }
+.research-role { color: var(--main); margin-top: 10px; font-size: 0.73rem; }
+.research-overview { color: var(--text); font-size: 0.85rem; line-height: 1.85; margin: 18px 0 12px; }
+.research-advisor { color: var(--sub); font-size: 0.72rem; line-height: 1.8; margin-bottom: 8px; }
+.research-honors { list-style: none; margin: 0; padding: 0; }
+.research-honors li { padding: 18px 0; border-top: 1px solid color-mix(in srgb, var(--sub) 25%, transparent); color: var(--main); font-size: 0.82rem; line-height: 1.8; }
+.research-details > summary { color: var(--sub); font-size: 0.74rem; padding: 16px 0; }
+.research-details > p, .research-details > ul { color: var(--sub); max-width: 76ch; font-size: 0.82rem; line-height: 1.9; margin-top: 12px; }
+.research-details li { margin-top: 8px; }
+@media (max-width: 700px) { .research-content { grid-template-columns: 1fr; gap: 20px; } }

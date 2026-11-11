@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useLayoutEffect, useState } from "react";
 import { themes, defaultThemeId } from "../data/themes";
 
 const ThemeContext = createContext(null);
@@ -6,20 +6,29 @@ const ThemeContext = createContext(null);
 function applyTheme(theme) {
   const root = document.documentElement;
   Object.entries(theme.colors).forEach(([key, value]) => {
-    root.style.setProperty(`--${key}`, value);
+    root.style.setProperty(`--${key.replace(/[A-Z]/g, (letter) => `-${letter.toLowerCase()}`)}`, value);
   });
   root.dataset.theme = theme.id;
 }
 
 export function ThemeProvider({ children }) {
   const [themeId, setThemeId] = useState(() => {
-    return localStorage.getItem("portfolio-theme") || defaultThemeId;
+    try {
+      const saved = localStorage.getItem("portfolio-theme");
+      return themes.some((theme) => theme.id === saved) ? saved : defaultThemeId;
+    } catch {
+      return defaultThemeId;
+    }
   });
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const theme = themes.find((t) => t.id === themeId) || themes[0];
     applyTheme(theme);
-    localStorage.setItem("portfolio-theme", themeId);
+    try {
+      localStorage.setItem("portfolio-theme", theme.id);
+    } catch {
+      // Theme switching still works when browser storage is unavailable.
+    }
   }, [themeId]);
 
   return (

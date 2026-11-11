@@ -3,8 +3,8 @@ import "./Education.css";
 
 export default function Education() {
   return (
-    <section id="education" className="section education">
-      <p className="section-label">education</p>
+    <section id="education" className="section education" tabIndex={-1} aria-labelledby="education-title">
+      <h2 className="section-label" id="education-title">Education</h2>
       <div className="edu-grid">
         {education.map((e) => (
           <div className="edu-card" key={e.school}>

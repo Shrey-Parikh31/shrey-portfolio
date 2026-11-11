@@ -1,60 +1,13 @@
-.timeline {
-  position: relative;
-  padding-left: 24px;
-  border-left: 2px solid color-mix(in srgb, var(--sub) 25%, transparent);
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-}
-
-.timeline-item {
-  position: relative;
-}
-
-.timeline-dot {
-  position: absolute;
-  left: -30px;
-  top: 4px;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--main);
-  box-shadow: 0 0 0 4px color-mix(in srgb, var(--main) 20%, transparent);
-}
-
-.timeline-head {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 10px;
-  justify-content: space-between;
-}
-
-.timeline-head h3 {
-  font-size: 1.1rem;
-  color: var(--text);
-}
-
-.timeline-dates {
-  font-size: 0.8rem;
-  color: var(--sub);
-  white-space: nowrap;
-}
-
-.timeline-org {
-  color: var(--main);
-  font-size: 0.9rem;
-  margin: 4px 0 12px;
-}
-
-.timeline-content ul {
-  margin: 0;
-  padding-left: 18px;
-  color: var(--sub);
-  font-size: 0.92rem;
-  line-height: 1.7;
-}
-
-.timeline-content li {
-  margin-bottom: 4px;
-}
+.timeline { display: flex; flex-direction: column; }
+.timeline-item { padding: 24px 0 18px; border-top: 1px solid color-mix(in srgb, var(--sub) 23%, transparent); }
+.timeline-head { display: flex; justify-content: space-between; align-items: baseline; gap: 10px 24px; flex-wrap: wrap; }
+.timeline-head h3 { font-size: 1.02rem; font-weight: 500; }
+.timeline-dates { color: var(--sub); font-size: 0.7rem; font-variant-numeric: tabular-nums; }
+.timeline-org { color: var(--main); margin-top: 6px; font-size: 0.76rem; }
+.timeline-preview { max-width: 76ch; color: var(--sub); margin-top: 14px; font-size: 0.83rem; line-height: 1.8; }
+.role-details summary { padding: 12px 0 8px; color: var(--sub); font-size: 0.71rem; }
+.role-details summary:hover { color: var(--main); }
+.role-details ul { max-width: 78ch; padding-left: 18px; color: var(--sub); font-size: 0.82rem; line-height: 1.8; }
+.role-details li { margin-bottom: 8px; }
+.earlier-roles { border-top: 1px solid color-mix(in srgb, var(--sub) 23%, transparent); }
+.earlier-roles > summary { padding: 17px 0; color: var(--sub); font-size: 0.79rem; }

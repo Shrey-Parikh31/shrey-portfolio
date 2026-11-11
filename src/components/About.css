@@ -1,6 +1,4 @@
-.about-text {
-  font-size: 1.15rem;
-  line-height: 1.75;
-  color: var(--text);
-  max-width: 760px;
-}
+.about-columns { display: grid; grid-template-columns: 1.5fr 1fr; gap: 48px; }
+.about-text { color: var(--text); font-size: 0.95rem; line-height: 1.9; }
+.about-accessibility { color: var(--sub); font-size: 0.82rem; line-height: 1.9; }
+@media (max-width: 700px) { .about-columns { grid-template-columns: 1fr; gap: 20px; } }
